@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <title>Todo List</title>
+  </head>
+  <body>
+    <p class="todo">My Todo List</p>
+    <div class="container">
+      <input
+        type="text"
+        data-bind="value: newTask, valueUpdate: 'afterkeydown'"
+        placeholder="Add a task..."
+      />
+      <button data-bind="click: addTask" class="addTask">Add task</button>
+      <select
+        data-bind="options: statuses, value: selectedStatus"
+        class="statuses"
+      ></select>
+
+      <ul data-bind="foreach: filteredTasks">
+        <li class="task">
+          <label>
+            <input type="checkbox" data-bind="checked: status" />
+            <span data-bind="text: text, css: {completed: status}"></span>
+          </label>
+          <button data-bind="click: $parent.editTask.bind($parent)">
+            Edit
+          </button>
+          <button
+            data-bind="click: $parent.removeTask.bind($parent)"
+            class="delete"
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+      <button data-bind="click: removeAllCompletedTasks" class="clear">
+        Clear tasks
+      </button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --pink: #fcb5df;
+  --darkPink: #a85184;
+  --purple: #c58cca;
+  --white: #fff;
+  --back: #b9b9b9;
+  --dark: #313154;
+  --red: #f44336;
+  --darkred: #ad0c00;
+
+  --shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: scroll;
+  background: var(--back);
+}
+
+.todo {
+  text-align: center;
+  font-size: 2rem;
+  margin: 10px;
+  text-shadow: var(--shadow);
+}
+
+.container {
+  max-width: 800px;
+  margin: 10px auto;
+  text-align: center;
+  background: var(--purple);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+}
+
+.addTask {
+  margin: 0 5px 0 5px;
+}
+
+.addTask:hover {
+  background: var(--dark);
+}
+
+.statuses {
+  background: var(--pink);
+}
+
+.statuses:hover {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+select {
+  padding: 12px;
+  margin: -10px 0 0 -5px;
+  border: none;
+  border-radius: 7px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.5em;
+  margin-top: 20px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 7px;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #a9a9a9;
+}
+
+button:nth-child(2) {
+  background: var(--pink);
+  color: #000;
+  margin-left: 10px;
+}
+
+button:last-child {
+  background: var(--red);
+  color: #fff;
+}
+
+.delete:hover {
+  background: var(--darkred);
+}
+
+.clear {
+  margin-top: 20px;
+}
+
+.clear:hover {
+  background: var(--darkred);
+}
+
+@media only screen and (max-width: 480px) {
+  input[type="text"],
+  button {
+    width: 100%;
+    border-radius: 7px;
+    margin-left: 0;
+  }
+  select {
+    margin: 15px 0 0 0;
+  }
+  li {
+    font-size: 1.2em;
+  }
+}
