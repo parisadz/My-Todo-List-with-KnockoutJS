@@ -55,7 +55,7 @@ function TaskListViewModel() {
     localStorage.setItem("tasks", ko.toJSON(self.tasks));
   };
 
-  self.removeAllCompletedTasks = function () {
+  self.removeAllTasks = function () {
     self.tasks.remove(function (task) {
       return task.status();
     });
