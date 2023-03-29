@@ -16,24 +16,32 @@
   <body>
     <p class="todo">My Todo List</p>
     <div class="container">
-      <input
-        type="text"
-        data-bind="value: newTask, valueUpdate: 'afterkeydown'"
-        placeholder="Add a task..."
-      />
-      <button data-bind="click: addTask" class="addTask">Add task</button>
-      <select
-        data-bind="options: statuses, value: selectedStatus"
-        class="statuses"
-      ></select>
+      <div class="addtodo">
+        <input
+          type="text"
+          data-bind="value: newTask, valueUpdate: 'afterkeydown'"
+          placeholder="Add a task..."
+        />
+        <button data-bind="click: addTask" class="addTask">Add task</button>
+        <select
+          data-bind="options: statuses, value: selectedStatus"
+          class="statuses"
+        ></select>
+      </div>
 
       <ul data-bind="foreach: filteredTasks">
         <li class="task">
           <label>
             <input type="checkbox" data-bind="checked: status" />
-            <span data-bind="text: text, css: {completed: status}"></span>
+            <span
+              data-bind="text: text, css: {completed: status}"
+              class="tasktext"
+            ></span>
           </label>
-          <button data-bind="click: $parent.editTask.bind($parent)">
+          <button
+            data-bind="click: $parent.editTask.bind($parent)"
+            class="editbtn"
+          >
             Edit
           </button>
           <button

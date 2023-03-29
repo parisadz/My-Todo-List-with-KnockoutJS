@@ -47,6 +47,7 @@ input[type="text"] {
   padding: 10px;
   border-radius: 7px;
   border: none;
+  margin-right: 10px;
 }
 
 .addTask {
@@ -109,7 +110,8 @@ li {
 button:nth-child(2) {
   background: var(--pink);
   color: #000;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 button:last-child {
@@ -119,6 +121,10 @@ button:last-child {
 
 .delete:hover {
   background: var(--darkred);
+}
+
+.editbtn:hover {
+  background: var(--darkPink);
 }
 
 .clear {
