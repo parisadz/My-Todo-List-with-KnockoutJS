@@ -56,9 +56,7 @@ function TaskListViewModel() {
   };
 
   self.removeAllTasks = function () {
-    self.tasks.remove(function (task) {
-      return task.status();
-    });
+    self.tasks.removeAll();
     localStorage.setItem("tasks", ko.toJSON(self.tasks));
   };
 }
