@@ -4,7 +4,7 @@ function Task(text, status) {
 }
 
 function TaskListViewModel() {
-  var self = this;
+  const self = this;
 
   self.tasks = ko.observableArray(
     JSON.parse(localStorage.getItem("tasks")) || []
@@ -14,10 +14,10 @@ function TaskListViewModel() {
   self.selectedStatus = ko.observable("All");
 
   self.filterTasks = function () {
-    var status = self.selectedStatus();
-    if (status == "All") {
+    const status = self.selectedStatus();
+    if (status === "All") {
       return self.tasks();
-    } else if (status == "Pending") {
+    } else if (status === "Pending") {
       return ko.utils.arrayFilter(self.tasks(), function (task) {
         return !task.status();
       });
@@ -31,19 +31,19 @@ function TaskListViewModel() {
   self.filteredTasks = ko.computed(self.filterTasks);
 
   self.addTask = function () {
-    var newTaskText = self.newTask().trim();
+    const newTaskText = self.newTask().trim();
     if (!newTaskText) {
       return;
     }
 
-    var newTask = new Task(newTaskText, false);
+    const newTask = new Task(newTaskText, false);
     self.tasks.push(newTask);
     self.newTask("");
     localStorage.setItem("tasks", ko.toJSON(self.tasks));
   };
 
   self.editTask = function (task) {
-    var newText = prompt("Enter new task", task.text());
+    const newText = prompt("Enter new task", task.text());
     if (newText) {
       task.text(newText);
       localStorage.setItem("tasks", ko.toJSON(self.tasks));

@@ -98,8 +98,8 @@ li {
 }
 
 .task {
-  display: flex;
-  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .completed {
@@ -119,7 +119,7 @@ button:last-child {
   color: #fff;
 }
 
-.delete:hover {
+.deletebtn:hover {
   background: var(--darkred);
 }
 
@@ -127,15 +127,15 @@ button:last-child {
   background: var(--darkPink);
 }
 
-.clear {
+.clearbtn {
   margin-top: 20px;
 }
 
-.clear:hover {
+.clearbtn:hover {
   background: var(--darkred);
 }
 
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
   input[type="text"] {
     width: 50%;
   }
@@ -154,5 +154,100 @@ button:last-child {
 
   .addTask {
     width: 70px;
+  }
+} */
+
+/* @media only screen and (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .addtodo input[type="“text”"] {
+    width: 100%;
+  }
+
+  .addTask {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .statuses {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .task {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .tasktext {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+  .editbtn,
+  .deletebtn {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .clear {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
+  }
+} */
+
+@media only screen and (max-width: 640px) {
+  /* input[type="text"] {
+    width: 30%;
+  } */
+}
+
+@media only screen and (max-width: 740px) {
+  input[type="text"] {
+    width: 60%;
+  }
+
+  .tasktext {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .addtodo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .addTask {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .statuses {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .tasktext {
+    font-size: 0.8rem;
+  }
+
+  .editbtn,
+  .deletebtn,
+  .clearbtn {
+    font-size: 0.6rem;
   }
 }
